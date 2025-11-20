@@ -4,38 +4,49 @@
 
 // aisa code hum likhanga jo synchronous code nhi honga woh side stack pr jayanga woh kbhi aayanga uska jwb kbhi aaynga toh usko turant nhi chla skte example
 
-// function getSongs() {
-//   setTimeout(function () {
-//     console.log("song aa gaye");
-//   }, 2000);
+// function getsongs(){
+//   setTimeout(function(){
+//     console.log("get song");
+    
+//   }, 2000)
 // }
 
-// function getMoreSongs() {
-//   setTimeout(function () {
-//     console.log(`more song aa gaye`);
-//   }, 1200);
+// function getMoreSongs(){
+//   setTimeout(function(){
+//     console.log("get More songs");
+    
+//   }, 1200)
 // }
 
-// getSongs();
+// getsongs();
 // getMoreSongs();
 
-function connectToServer(cbfn) {
+// callback
+
+function connectToServer(cbfn){
   console.log("connecting to server...");
-  setTimeout(function () {
+  setTimeout(function(){
     console.log("connected to server");
     cbfn();
-  }, 2000);
+    
+  }, 2000)
 }
 
-function fetchCourses(cbfn) {
-  console.log("fetching course...");
-  setTimeout(() => {
-    cbfn(["course", "course1", "course2", "course3"]);
-  }, 2000);
+function fetchCourses(cbfn){
+  console.log("fetching courses...");
+  setTimeout(()=>{
+    cbfn(["course 1", "course 2", "course 3", "course 4"]);
+  }, 2000)
+  
 }
 
-connectToServer(function () {
-  fetchCourses(function (data) {
-    console.log(data);
+connectToServer(function(){
+  fetchCourses(function(data){
+    showCourses(function(){
+      
+    });
+    
   });
+  
+  
 });
