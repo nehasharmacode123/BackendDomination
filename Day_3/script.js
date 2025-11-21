@@ -44,6 +44,6 @@ connectToServer()
 
 // asnyc await
 
-async function getCourses()[
-    await
-]
+// async function getCourses()[
+//     await
+// ]
